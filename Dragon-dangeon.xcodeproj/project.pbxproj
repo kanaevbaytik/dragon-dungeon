@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE27ABFE2E10273300FECF74 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27ABFC2E10273300FECF74 /* main.swift */; };
+		CE27AC012E10274700FECF74 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC002E10274700FECF74 /* Direction.swift */; };
+		CE27AC032E1027D000FECF74 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC022E1027D000FECF74 /* Position.swift */; };
+		CE27AC062E1028B800FECF74 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC052E1028B800FECF74 /* Item.swift */; };
+		CE27AC102E102A0200FECF74 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC0F2E102A0200FECF74 /* Key.swift */; };
+		CE27AC122E102A3500FECF74 /* Chest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC112E102A3500FECF74 /* Chest.swift */; };
+		CE27AC142E102A5C00FECF74 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC132E102A5C00FECF74 /* Food.swift */; };
+		CE27AC162E102ABD00FECF74 /* Sword.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC152E102ABD00FECF74 /* Sword.swift */; };
+		CE27AC182E102AF300FECF74 /* Gold.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC172E102AF300FECF74 /* Gold.swift */; };
+		CE27AC1A2E1030AF00FECF74 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC192E1030AF00FECF74 /* Room.swift */; };
+		CE27AC1C2E1032E400FECF74 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC1B2E1032E400FECF74 /* Player.swift */; };
+		CE27AC1E2E10353900FECF74 /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC1D2E10353900FECF74 /* Maze.swift */; };
+		CE27AC212E10365200FECF74 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC202E10365200FECF74 /* GameEngine.swift */; };
+		CE27AC232E10369200FECF74 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC222E10369200FECF74 /* Command.swift */; };
+		CE27AC252E1036E000FECF74 /* CommandParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC242E1036E000FECF74 /* CommandParser.swift */; };
+		CE27AC292E11B00B00FECF74 /* MazeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC282E11B00B00FECF74 /* MazeValidator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE27ABF02E10271B00FECF74 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CE27ABF22E10271B00FECF74 /* Dragon-dangeon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Dragon-dangeon"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE27ABFC2E10273300FECF74 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		CE27AC002E10274700FECF74 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		CE27AC022E1027D000FECF74 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		CE27AC052E1028B800FECF74 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		CE27AC0F2E102A0200FECF74 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		CE27AC112E102A3500FECF74 /* Chest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chest.swift; sourceTree = "<group>"; };
+		CE27AC132E102A5C00FECF74 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		CE27AC152E102ABD00FECF74 /* Sword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sword.swift; sourceTree = "<group>"; };
+		CE27AC172E102AF300FECF74 /* Gold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gold.swift; sourceTree = "<group>"; };
+		CE27AC192E1030AF00FECF74 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		CE27AC1B2E1032E400FECF74 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		CE27AC1D2E10353900FECF74 /* Maze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maze.swift; sourceTree = "<group>"; };
+		CE27AC202E10365200FECF74 /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
+		CE27AC222E10369200FECF74 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		CE27AC242E1036E000FECF74 /* CommandParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandParser.swift; sourceTree = "<group>"; };
+		CE27AC282E11B00B00FECF74 /* MazeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeValidator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE27ABEF2E10271B00FECF74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE27ABE92E10271B00FECF74 = {
+			isa = PBXGroup;
+			children = (
+				CE27ABFD2E10273300FECF74 /* Dragon-dangeon */,
+				CE27ABF32E10271B00FECF74 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE27ABF32E10271B00FECF74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE27ABF22E10271B00FECF74 /* Dragon-dangeon */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE27ABFD2E10273300FECF74 /* Dragon-dangeon */ = {
+			isa = PBXGroup;
+			children = (
+				CE27AC272E11AFF700FECF74 /* UI */,
+				CE27AC262E11AFE200FECF74 /* Services */,
+				CE27AC1F2E10364500FECF74 /* Engine */,
+				CE27AC042E1028A900FECF74 /* Entities */,
+				CE27ABFF2E10273D00FECF74 /* Core */,
+				CE27ABFC2E10273300FECF74 /* main.swift */,
+			);
+			path = "Dragon-dangeon";
+			sourceTree = "<group>";
+		};
+		CE27ABFF2E10273D00FECF74 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CE27AC002E10274700FECF74 /* Direction.swift */,
+				CE27AC022E1027D000FECF74 /* Position.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CE27AC042E1028A900FECF74 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CE27AC0E2E1029F800FECF74 /* Items */,
+				CE27AC052E1028B800FECF74 /* Item.swift */,
+				CE27AC192E1030AF00FECF74 /* Room.swift */,
+				CE27AC1B2E1032E400FECF74 /* Player.swift */,
+				CE27AC1D2E10353900FECF74 /* Maze.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CE27AC0E2E1029F800FECF74 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				CE27AC0F2E102A0200FECF74 /* Key.swift */,
+				CE27AC112E102A3500FECF74 /* Chest.swift */,
+				CE27AC132E102A5C00FECF74 /* Food.swift */,
+				CE27AC152E102ABD00FECF74 /* Sword.swift */,
+				CE27AC172E102AF300FECF74 /* Gold.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		CE27AC1F2E10364500FECF74 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				CE27AC202E10365200FECF74 /* GameEngine.swift */,
+				CE27AC222E10369200FECF74 /* Command.swift */,
+				CE27AC242E1036E000FECF74 /* CommandParser.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		CE27AC262E11AFE200FECF74 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE27AC282E11B00B00FECF74 /* MazeValidator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CE27AC272E11AFF700FECF74 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE27ABF12E10271B00FECF74 /* Dragon-dangeon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE27ABF92E10271B00FECF74 /* Build configuration list for PBXNativeTarget "Dragon-dangeon" */;
+			buildPhases = (
+				CE27ABEE2E10271B00FECF74 /* Sources */,
+				CE27ABEF2E10271B00FECF74 /* Frameworks */,
+				CE27ABF02E10271B00FECF74 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dragon-dangeon";
+			packageProductDependencies = (
+			);
+			productName = DragonsGame;
+			productReference = CE27ABF22E10271B00FECF74 /* Dragon-dangeon */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE27ABEA2E10271B00FECF74 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					CE27ABF12E10271B00FECF74 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+				};
+			};
+			buildConfigurationList = CE27ABED2E10271B00FECF74 /* Build configuration list for PBXProject "Dragon-dangeon" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE27ABE92E10271B00FECF74;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = CE27ABF32E10271B00FECF74 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE27ABF12E10271B00FECF74 /* Dragon-dangeon */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE27ABEE2E10271B00FECF74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE27AC1C2E1032E400FECF74 /* Player.swift in Sources */,
+				CE27AC292E11B00B00FECF74 /* MazeValidator.swift in Sources */,
+				CE27AC252E1036E000FECF74 /* CommandParser.swift in Sources */,
+				CE27AC212E10365200FECF74 /* GameEngine.swift in Sources */,
+				CE27AC182E102AF300FECF74 /* Gold.swift in Sources */,
+				CE27AC1E2E10353900FECF74 /* Maze.swift in Sources */,
+				CE27AC142E102A5C00FECF74 /* Food.swift in Sources */,
+				CE27AC062E1028B800FECF74 /* Item.swift in Sources */,
+				CE27AC102E102A0200FECF74 /* Key.swift in Sources */,
+				CE27AC1A2E1030AF00FECF74 /* Room.swift in Sources */,
+				CE27ABFE2E10273300FECF74 /* main.swift in Sources */,
+				CE27AC122E102A3500FECF74 /* Chest.swift in Sources */,
+				CE27AC162E102ABD00FECF74 /* Sword.swift in Sources */,
+				CE27AC232E10369200FECF74 /* Command.swift in Sources */,
+				CE27AC012E10274700FECF74 /* Direction.swift in Sources */,
+				CE27AC032E1027D000FECF74 /* Position.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CE27ABF72E10271B00FECF74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = WQRR65523H;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CE27ABF82E10271B00FECF74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = WQRR65523H;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		CE27ABFA2E10271B00FECF74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WQRR65523H;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CE27ABFB2E10271B00FECF74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WQRR65523H;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE27ABED2E10271B00FECF74 /* Build configuration list for PBXProject "Dragon-dangeon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE27ABF72E10271B00FECF74 /* Debug */,
+				CE27ABF82E10271B00FECF74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE27ABF92E10271B00FECF74 /* Build configuration list for PBXNativeTarget "Dragon-dangeon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE27ABFA2E10271B00FECF74 /* Debug */,
+				CE27ABFB2E10271B00FECF74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE27ABEA2E10271B00FECF74 /* Project object */;
+}
