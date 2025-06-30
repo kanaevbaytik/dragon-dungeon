@@ -5,6 +5,8 @@ final class GameEngine {
     private let maze: Maze
     private let player: Player
     private var isRunning = true
+    
+    private var lastPosition: Position?
 
     init(maze: Maze, player: Player) {
         self.maze = maze
@@ -54,6 +56,43 @@ final class GameEngine {
             - open               — Open chest (if you have a key)
             - help               — Show this help message
             """)
+        case .fight:
+            guard let room = maze.room(at: player.position),
+                  let monster = room.monsterName else {
+                print("❌ There is no one to fight here.")
+                return
+            }
+
+            guard player.hasSword() else {
+                print("🗡 You have no sword to fight the \(monster)!")
+                return
+            }
+
+            // Условия боя (случайный исход)
+            let roll = Int.random(in: 0..<3)
+            switch roll {
+            case 0:
+                // Победа без урона
+                room.removeMonster()
+                print("⚔️ You defeated the \(monster) with ease!")
+            case 1:
+                // Победа с урона
+                room.removeMonster()
+                player.loseSteps(max(1, player.stepsLeft / 10))
+                print("⚔️ You defeated the \(monster), but you took a hit!")
+            case 2:
+                // Монстр отбрасывает игрока назад
+                player.loseSteps(max(1, player.stepsLeft / 10))
+                if let last = lastPosition {
+                    player.teleport(to: last)
+                    print("↩️ You were pushed back to your previous position.")
+                } else {
+                    print("⚠️ Error: No last position to teleport to.")
+                }
+                print("💥 The \(monster) hit you hard and threw you back!")
+            default:
+                break
+            }
         case .unknown(let raw):
             print("Unknown command: \(raw)")
         }
@@ -71,10 +110,9 @@ final class GameEngine {
             print("You hit a wall.")
             return
         }
-
+        lastPosition = player.position
         player.move(to: direction)
         guard let newRoom = maze.room(at: player.position) else { return }
-
         if let mob = newRoom.monsterName {
             let handler = MobEncounterHandler(player: player, fromPosition: currentRoom.position, monsterName: mob)
             handler.engage { readLine() }
