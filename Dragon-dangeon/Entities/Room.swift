@@ -45,6 +45,10 @@ final class Room {
     func containsItem<T: Item>(ofType type: T.Type) -> Bool {
         return items.contains { $0 is T }
     }
+    
+    func removeMonster() {
+        self.monsterName = nil
+    }
 
 
     var description: String {

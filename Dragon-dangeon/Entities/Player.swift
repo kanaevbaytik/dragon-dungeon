@@ -61,4 +61,8 @@ final class Player {
     func teleport(to newPosition: Position) {
         self.position = newPosition
     }
+    
+    func hasSword() -> Bool {
+        inventory.contains { $0 is Sword }
+    }
 }
