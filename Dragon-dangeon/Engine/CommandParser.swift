@@ -26,6 +26,7 @@ struct CommandParser {
         case "open": return .open
         case "fight": return .fight
         case "help": return .help
+        case "exit": return .exit
         default: break
         }
 

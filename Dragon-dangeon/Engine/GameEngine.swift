@@ -63,14 +63,21 @@ final class GameEngine {
             printInfo("⚔️ You try to fight, but nothing happens. (Not implemented)")
         case .help:
             printInfo("""
-            📜 Available commands:
-            - n, s, e, w         — Move North, South, East, West
-            - get [item]         — Pick up an item
-            - drop [item]        — Drop an item from inventory
-            - eat [item]         — Eat food to restore steps
-            - open               — Open chest (if you have a key)
-            - help               — Show this help message
-            """)
+        📜 Available commands:
+        - n, s, e, w         — Move North, South, East, West
+        - get [item]         — Pick up an item (e.g. get gold)
+        - drop [item]        — Drop an item from inventory (e.g. drop torchlight)
+        - eat [item]         — Eat food to restore steps
+        - open               — Open chest (if you have a key)
+        - fight              — Fight a monster (if you have a sword)
+        - help               — Show this help message
+        - exit               — Exit the game
+
+        💡 Tips:
+        - If you enter a dark room, bring a torchlight to illuminate it.
+        - Fight monsters only if you have a sword.
+        - Gold adds coins automatically when picked up.
+        """)
         case .fight:
             guard let room = maze.room(at: player.position),
                   let monster = room.monsterName else {
@@ -110,7 +117,13 @@ final class GameEngine {
             }
         case .unknown(let raw):
             printError("Unknown command: \(raw)")
+        case .exit:
+            printInfo("👋 You chose to exit the game. See you next time!")
+            isRunning = false
+        default:
+            break
         }
+        
     }
 
     private func movePlayer(to direction: Direction) {
@@ -140,6 +153,18 @@ final class GameEngine {
         
         if room.isDark && !room.isIlluminated && player.hasItem(ofType: Torchlight.self) {
             room.isIlluminated = true
+        }
+        
+        if let mob = room.monsterName {
+            printInfo("⚠️ There's a monster here! You can use 'fight' if you have a sword.")
+        }
+
+        if room.items.contains(where: { $0 is Gold }) {
+            printInfo("💰 You see gold! Use 'get gold' to collect it.")
+        }
+
+        if room.isDark && !room.isIlluminated {
+            printGray("🌑 It's dark here. If you have a torchlight, you can illuminate the room.")
         }
 
         print(room.description)
