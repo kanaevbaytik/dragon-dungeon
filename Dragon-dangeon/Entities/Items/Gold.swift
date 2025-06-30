@@ -9,7 +9,7 @@ final class Gold: Item {
     }
     
     var name : String {
-        return "gold (\(coins) coins"
+        return "gold (\(coins) coins)"
     }
     
     var isCollectible: Bool { true }
