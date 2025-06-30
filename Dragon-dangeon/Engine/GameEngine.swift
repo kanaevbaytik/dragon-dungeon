@@ -73,6 +73,12 @@ final class GameEngine {
         }
 
         player.move(to: direction)
+        guard let newRoom = maze.room(at: player.position) else { return }
+
+        if let mob = newRoom.monsterName {
+            let handler = MobEncounterHandler(player: player, fromPosition: currentRoom.position, monsterName: mob)
+            handler.engage { readLine() }
+        }
         describeCurrentRoom()
     }
 
