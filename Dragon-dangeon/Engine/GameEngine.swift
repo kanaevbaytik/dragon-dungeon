@@ -14,9 +14,9 @@ final class GameEngine {
     }
 
     func start() {
-        print("Welcome to the Dragon’s Dungeon!")
-        print("Type 'help' to see available commands.")
-        print("Find the key and the chest to retrieve the Holy Grail.\n")
+        printInfo("Welcome to the Dragon’s Dungeon!")
+        printInfo("Type 'help' to see available commands.")
+        printInfo("Find the key and the chest to retrieve the Holy Grail.\n")
         describeCurrentRoom()
 
         while isRunning && player.stepsLeft > 0 {
@@ -28,7 +28,7 @@ final class GameEngine {
         }
 
         if player.stepsLeft <= 0 {
-            print("💀 You ran out of steps and died in the dungeon.")
+            printDeath("💀 You ran out of steps and died in the dungeon.")
         }
     }
 
@@ -44,7 +44,7 @@ final class GameEngine {
             }
             return $0 == command
         }) {
-            print("🌑 It's too dark to do that. You can only move or type 'help'.")
+            printGray("🌑 It's too dark to do that. You can only move or type 'help'.")
             return
         }
 
@@ -60,9 +60,9 @@ final class GameEngine {
         case .open:
             openChest()
         case .fight:
-            print("⚔️ You try to fight, but nothing happens. (Not implemented)")
+            printInfo("⚔️ You try to fight, but nothing happens. (Not implemented)")
         case .help:
-            print("""
+            printInfo("""
             📜 Available commands:
             - n, s, e, w         — Move North, South, East, West
             - get [item]         — Pick up an item
@@ -74,12 +74,12 @@ final class GameEngine {
         case .fight:
             guard let room = maze.room(at: player.position),
                   let monster = room.monsterName else {
-                print("❌ There is no one to fight here.")
+                printGray("❌ There is no one to fight here.")
                 return
             }
 
             guard player.hasSword() else {
-                print("🗡 You have no sword to fight the \(monster)!")
+                printGray("🗡 You have no sword to fight the \(monster)!")
                 return
             }
 
@@ -89,40 +89,40 @@ final class GameEngine {
             case 0:
                 // Победа без урона
                 room.removeMonster()
-                print("⚔️ You defeated the \(monster) with ease!")
+                printSuccess("⚔️ You defeated the \(monster) with ease!")
             case 1:
                 // Победа с урона
                 room.removeMonster()
                 player.loseSteps(max(1, player.stepsLeft / 10))
-                print("⚔️ You defeated the \(monster), but you took a hit!")
+                printGray("⚔️ You defeated the \(monster), but you took a hit!")
             case 2:
                 // Монстр отбрасывает игрока назад
                 player.loseSteps(max(1, player.stepsLeft / 10))
                 if let last = lastPosition {
-                    player.teleport(to: last)
-                    print("↩️ You were pushed back to your previous position.")
+                player.teleport(to: last)
+                printGray("↩️ You were pushed back to your previous position.")
                 } else {
-                    print("⚠️ Error: No last position to teleport to.")
+                printError("⚠️ Error: No last position to teleport to.")
                 }
-                print("💥 The \(monster) hit you hard and threw you back!")
+                printError("💥 The \(monster) hit you hard and threw you back!")
             default:
                 break
             }
         case .unknown(let raw):
-            print("Unknown command: \(raw)")
+            printError("Unknown command: \(raw)")
         }
     }
 
     private func movePlayer(to direction: Direction) {
         guard let currentRoom = maze.room(at: player.position) else { return }
         guard currentRoom.doors.contains(direction) else {
-            print("🚪 There's no door to the \(direction.description).")
+            printError("🚪 There's no door to the \(direction.description).")
             return
         }
 
         let newPosition = player.position.moved(to: direction)
         guard let newRoom = maze.room(at: newPosition) else {
-            print("You hit a wall.")
+            printGray("You hit a wall.")
             return
         }
         lastPosition = player.position
@@ -143,46 +143,46 @@ final class GameEngine {
         }
 
         print(room.description)
-        print("Inventory: \(player.inventory.map { $0.name }.joined(separator: ", "))")
-        print("Gold: \(player.gold) | Steps left: \(player.stepsLeft)")
+        printInfo("Inventory: \(player.inventory.map { $0.name }.joined(separator: ", "))")
+        printInfo("Gold: \(player.gold) | Steps left: \(player.stepsLeft)")
     }
 
     private func pickUpItem(named name: String) {
         guard let room = maze.room(at: player.position) else { return }
         guard let item = room.item(named: name) else {
-            print("❌ No item named '\(name)' in this room.")
+            printError("❌ No item named '\(name)' in this room.")
             return
         }
 
         if item.isCollectible {
             player.addItem(item)
             room.removeItem(named: name)
-            print("🧾 You picked up the \(item.name).")
+            printSuccess("🧾 You picked up the \(item.name).")
         } else {
-            print("❌ You can't pick up the \(item.name).")
+            printError("❌ You can't pick up the \(item.name).")
         }
     }
 
     private func dropItem(named name: String) {
         guard let item = player.dropItem(named: name) else {
-            print("❌ No such item in inventory.")
+            printError("❌ No such item in inventory.")
             return
         }
 
         maze.room(at: player.position)?.addItem(item)
-        print("🧾 You dropped the \(item.name).")
+        printSuccess("🧾 You dropped the \(item.name).")
         if item is Torchlight {
             maze.room(at: player.position)?.isIlluminated = true
-            print("💡 The room is now illuminated by the torchlight.")
+            printSuccess("💡 The room is now illuminated by the torchlight.")
         }
 
     }
 
     private func eatItem(named name: String) {
         if player.eatItem(named: name) {
-            print("🍖 You ate the \(name) and feel stronger!")
+            printSuccess("🍖 You ate the \(name) and feel stronger!")
         } else {
-            print("❌ You can't eat '\(name)'.")
+            printError("❌ You can't eat '\(name)'.")
         }
     }
 
@@ -190,15 +190,15 @@ final class GameEngine {
         guard let room = maze.room(at: player.position) else { return }
 
         if !room.containsItem(ofType: Chest.self) {
-            print("❌ There is no chest here.")
+            printError("❌ There is no chest here.")
             return
         }
 
         if player.hasItem(ofType: Key.self) {
-            print("🎉 You opened the chest and found the Holy Grail! YOU WIN!")
+            printVictory("🎉 You opened the chest and found the Holy Grail! YOU WIN!")
             isRunning = false
         } else {
-            print("🔒 The chest is locked. You need a key.")
+            printError("🔒 The chest is locked. You need a key.")
         }
     }
 }
