@@ -23,6 +23,7 @@
 		CE27AC232E10369200FECF74 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC222E10369200FECF74 /* Command.swift */; };
 		CE27AC252E1036E000FECF74 /* CommandParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC242E1036E000FECF74 /* CommandParser.swift */; };
 		CE27AC292E11B00B00FECF74 /* MazeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC282E11B00B00FECF74 /* MazeValidator.swift */; };
+		CE27AC2D2E1271A200FECF74 /* MobEncounterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC2C2E1271A200FECF74 /* MobEncounterHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +56,7 @@
 		CE27AC222E10369200FECF74 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		CE27AC242E1036E000FECF74 /* CommandParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandParser.swift; sourceTree = "<group>"; };
 		CE27AC282E11B00B00FECF74 /* MazeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeValidator.swift; sourceTree = "<group>"; };
+		CE27AC2C2E1271A200FECF74 /* MobEncounterHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobEncounterHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				CE27AC282E11B00B00FECF74 /* MazeValidator.swift */,
+				CE27AC2C2E1271A200FECF74 /* MobEncounterHandler.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				CE27AC1C2E1032E400FECF74 /* Player.swift in Sources */,
 				CE27AC292E11B00B00FECF74 /* MazeValidator.swift in Sources */,
 				CE27AC252E1036E000FECF74 /* CommandParser.swift in Sources */,
+				CE27AC2D2E1271A200FECF74 /* MobEncounterHandler.swift in Sources */,
 				CE27AC212E10365200FECF74 /* GameEngine.swift in Sources */,
 				CE27AC182E102AF300FECF74 /* Gold.swift in Sources */,
 				CE27AC1E2E10353900FECF74 /* Maze.swift in Sources */,

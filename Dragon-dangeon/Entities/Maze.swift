@@ -72,6 +72,7 @@ final class Maze {
             let room = rooms[pos.x][pos.y]
 
             let roll = Int.random(in: 0..<100)
+
             switch roll {
             case 0..<30:
                 room.addItem(Food())
@@ -79,13 +80,20 @@ final class Maze {
                 room.addItem(Sword())
             case 50..<90:
                 room.addItem(Gold(coins: Int.random(in: 50...200)))
-            case 90..<100:
+            case 90..<95:
                 room.isDark = true
             default:
                 break
             }
+
+            // Дополнительно с шансом 5% — монстр
+            if Int.random(in: 0..<100) < 5 {
+                room.monsterName = ["goblin", "orc", "skeleton", "demon"].randomElement()
+                print("💀 Monster spawned at [\(pos.x), \(pos.y)] — \(room.monsterName!)")
+            }
         }
     }
+
 
     private func randomEmptyPosition() -> Position {
         var pos: Position

@@ -53,4 +53,12 @@ final class Player {
         inventory.remove(at: index)
         return true
     }
+    
+    func loseSteps(_ count: Int) {
+        stepsLeft = max(0, stepsLeft - count)
+    }
+    
+    func teleport(to newPosition: Position) {
+        self.position = newPosition
+    }
 }
