@@ -25,6 +25,7 @@
 		CE27AC292E11B00B00FECF74 /* MazeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC282E11B00B00FECF74 /* MazeValidator.swift */; };
 		CE27AC2D2E1271A200FECF74 /* MobEncounterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC2C2E1271A200FECF74 /* MobEncounterHandler.swift */; };
 		CE27AC2F2E13123D00FECF74 /* Torchlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC2E2E13123D00FECF74 /* Torchlight.swift */; };
+		CE27AC322E13301C00FECF74 /* ConsoleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27AC312E13301C00FECF74 /* ConsoleColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +60,7 @@
 		CE27AC282E11B00B00FECF74 /* MazeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeValidator.swift; sourceTree = "<group>"; };
 		CE27AC2C2E1271A200FECF74 /* MobEncounterHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobEncounterHandler.swift; sourceTree = "<group>"; };
 		CE27AC2E2E13123D00FECF74 /* Torchlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Torchlight.swift; sourceTree = "<group>"; };
+		CE27AC312E13301C00FECF74 /* ConsoleColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		CE27ABFD2E10273300FECF74 /* Dragon-dangeon */ = {
 			isa = PBXGroup;
 			children = (
+				CE27AC302E13300700FECF74 /* Utilties */,
 				CE27AC272E11AFF700FECF74 /* UI */,
 				CE27AC262E11AFE200FECF74 /* Services */,
 				CE27AC1F2E10364500FECF74 /* Engine */,
@@ -159,6 +162,14 @@
 			children = (
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		CE27AC302E13300700FECF74 /* Utilties */ = {
+			isa = PBXGroup;
+			children = (
+				CE27AC312E13301C00FECF74 /* ConsoleColor.swift */,
+			);
+			path = Utilties;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 				CE27AC162E102ABD00FECF74 /* Sword.swift in Sources */,
 				CE27AC232E10369200FECF74 /* Command.swift in Sources */,
 				CE27AC012E10274700FECF74 /* Direction.swift in Sources */,
+				CE27AC322E13301C00FECF74 /* ConsoleColor.swift in Sources */,
 				CE27AC032E1027D000FECF74 /* Position.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
