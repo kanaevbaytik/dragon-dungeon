@@ -10,4 +10,5 @@ enum Command: Equatable {
     case fight
     case unknown(String)
     case help
+    case exit
 }
