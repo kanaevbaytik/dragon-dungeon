@@ -33,6 +33,21 @@ final class GameEngine {
     }
 
     private func handle(_ command: Command) {
+        guard let room = maze.room(at: player.position) else { return }
+
+        let canAct = room.isVisible
+        let allowedWhileDark: [Command] = [.move(.north), .move(.south), .move(.east), .move(.west), .help]
+
+        if !canAct && !allowedWhileDark.contains(where: {
+            if case let .move(dir) = $0, case let .move(inputDir) = command {
+                return dir == inputDir
+            }
+            return $0 == command
+        }) {
+            print("🌑 It's too dark to do that. You can only move or type 'help'.")
+            return
+        }
+
         switch command {
         case .move(let direction):
             movePlayer(to: direction)
@@ -122,6 +137,10 @@ final class GameEngine {
 
     private func describeCurrentRoom() {
         guard let room = maze.room(at: player.position) else { return }
+        
+        if room.isDark && !room.isIlluminated && player.hasItem(ofType: Torchlight.self) {
+            room.isIlluminated = true
+        }
 
         print(room.description)
         print("Inventory: \(player.inventory.map { $0.name }.joined(separator: ", "))")
@@ -152,6 +171,11 @@ final class GameEngine {
 
         maze.room(at: player.position)?.addItem(item)
         print("🧾 You dropped the \(item.name).")
+        if item is Torchlight {
+            maze.room(at: player.position)?.isIlluminated = true
+            print("💡 The room is now illuminated by the torchlight.")
+        }
+
     }
 
     private func eatItem(named name: String) {

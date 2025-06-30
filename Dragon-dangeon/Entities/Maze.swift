@@ -82,11 +82,12 @@ final class Maze {
                 room.addItem(Gold(coins: Int.random(in: 50...200)))
             case 90..<95:
                 room.isDark = true
+            case 95..<98:
+                room.addItem(Torchlight())
             default:
                 break
             }
 
-            // Дополнительно с шансом 5% — монстр
             if Int.random(in: 0..<100) < 5 {
                 room.monsterName = ["goblin", "orc", "skeleton", "demon"].randomElement()
                 print("💀 Monster spawned at [\(pos.x), \(pos.y)] — \(room.monsterName!)")
