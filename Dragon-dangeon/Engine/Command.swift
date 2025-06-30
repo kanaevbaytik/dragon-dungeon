@@ -1,7 +1,7 @@
 
 import Foundation
 
-enum Command {
+enum Command: Equatable {
     case move(Direction)
     case get(String)
     case drop(String)
