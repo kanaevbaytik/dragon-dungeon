@@ -1,67 +1,74 @@
 # 🐉 Dragon Dungeon — Swift Console Game
 
-A text-based dungeon crawler built entirely in Swift using clean MVVM architecture. You explore a labyrinth, collect items, and search for the Holy Grail — all before your steps run out.
+A text-based dungeon crawler built in Swift, where you explore a labyrinth, collect items, and search for the Holy Grail — all before your steps run out.
 
 ---
 
 ## 🚀 Features (MVP)
 
-* ✅ Procedural maze generation with doors and rooms
-* ✅ Guaranteed path to key and chest (maze validator)
-* ✅ Item interaction: get, drop, eat
-* ✅ Inventory management
-* ✅ Victory and defeat conditions
-* ✅ Step counter as "life system"
-* ✅ Clean MVVM architecture + SOLID principles
+✅ Procedural maze generation with doors and rooms  
+✅ Guaranteed path to key and chest (maze validator)  
+✅ Inventory and item interaction: get, drop, eat  
+✅ Victory and defeat conditions  
+✅ Step counter as life system  
+✅ Colorized console output for better UX  
+✅ Dark rooms requiring torchlight  
+✅ Monsters with reaction-based combat  
+✅ Sword and fight mechanic  
 
 ---
 
-## 🎮 Commands (via console input)
+## 🎮 Console Commands
 
-* `n`, `s`, `e`, `w` — move North, South, East, West
-* `get [item]` — pick up item in the current room
-* `drop [item]` — remove item from inventory into the room
-* `eat [item]` — consume food to restore steps
-* `open` — open the chest (only if you have the key)
-* `help` — display the list of available commands
+n, s, e, w — Move North, South, East, West
+get [item] — Pick up an item in the current room
+drop [item] — Drop an item from inventory
+eat [item] — Consume food to restore steps
+open — Open the chest (requires a key)
+fight — Fight a monster (requires a sword)
+help — Display available commands
+exit — Quit the game manually
+
+
+> ℹ️ Use `help` at any time to view commands. During a monster encounter, you must act quickly or risk being attacked.
 
 ---
 
 ## 📂 Project Structure
 
-```
 DragonDungeon/
-├── Core/                # Low-level types (Position, Direction)
-├── Domain/              # Models (Player, Room, Items)
-│   └── Items/           # Individual item types
-├── Services/            # MazeValidator, etc.
-├── Engine/              # Game logic (GameEngine, CommandParser)
-├── UI/                  # Console IO layer (coming soon)
-└── main.swift           # Entry point
-```
+├── Core/ # Low-level types (Position, Direction)
+├── Domain/ # Models (Player, Room, Items)
+│ └── Items/ # Item implementations: Sword, Food, Torchlight, etc.
+├── Services/ # MazeValidator and related logic
+├── Engine/ # Main controller logic (GameEngine, CommandParser)
+├── UI/ # (Reserved for future CLI improvements)
+└── main.swift # Entry point
+
 
 ---
 
-## 🔧 Tech
+## 🔧 Tech Stack
 
-* Language: **Swift 5**
-* Platform: **Console (macOS Terminal)**
-* Architecture: **MVVM**
-* Dependencies: **Zero external libraries**
+- **Language**: Swift 5  
+- **Platform**: macOS Terminal  
+- **Architecture**: MVC (Model–View–Controller)  
+  - `Model`: Player, Room, Items, etc.  
+  - `View`: Console output  
+  - `Controller`: GameEngine  
+- **Dependencies**: Zero external libraries  
 
 ---
 
-## 📌 Upcoming Features
+## ✨ Possible Next Steps
 
-* [ ] 🧟 Monsters and fight logic
-* [ ] 🔦 Dark rooms and torchlight
-* [ ] ⏱ Timer-based enemy reactions
-* [ ] 🎨 Colorized console output (ANSI)
-* [ ] ⚔️ Sword and `fight` command
-* [ ] 💾 Game saving (stretch goal)
+- 💾 Game saving/loading  
+- 🧠 Smarter monster AI  
+- 🧪 Unit tests  
+- 🎨 ASCII-based map preview
 
 ---
 
 ## 👨‍💻 Author
 
-Made with ❤️ by [@kanaevbaytik](https://github.com/kanaevbaytik)
+Made with ❤️ by [@kanaevbaytik]
