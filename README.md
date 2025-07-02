@@ -20,30 +20,31 @@ A text-based dungeon crawler built in Swift, where you explore a labyrinth, coll
 
 ## 🎮 Console Commands
 
-n, s, e, w — Move North, South, East, West
-get [item] — Pick up an item in the current room
-drop [item] — Drop an item from inventory
-eat [item] — Consume food to restore steps
-open — Open the chest (requires a key)
-fight — Fight a monster (requires a sword)
-help — Display available commands
-exit — Quit the game manually
+- `n`, `s`, `e`, `w` — Move North, South, East, West  
+- `get [item]` — Pick up an item in the current room  
+- `drop [item]` — Drop an item from inventory  
+- `eat [item]` — Consume food to restore steps  
+- `open` — Open the chest (requires a key)  
+- `fight` — Fight a monster (requires a sword)  
+- `help` — Display available commands  
+- `exit` — Quit the game manually  
 
-
-> ℹ️ Use `help` at any time to view commands. During a monster encounter, you must act quickly or risk being attacked.
+> ℹ️ Use `help` at any time to view commands.  
+> ⚠️ During monster encounters, act quickly or risk being thrown back and losing steps.
 
 ---
 
 ## 📂 Project Structure
 
 DragonDungeon/
-├── Core/ # Low-level types (Position, Direction)
-├── Domain/ # Models (Player, Room, Items)
-│ └── Items/ # Item implementations: Sword, Food, Torchlight, etc.
-├── Services/ # MazeValidator and related logic
-├── Engine/ # Main controller logic (GameEngine, CommandParser)
-├── UI/ # (Reserved for future CLI improvements)
-└── main.swift # Entry point
+- ├── Core/ # Low-level types (Position, Direction)
+- ├── Domain/ # Models (Player, Room, Items)
+- │ └── Items/ # Item implementations: Sword, Food, Torchlight, etc.
+- ├── Services/ # MazeValidator and related logic
+- ├── Engine/ # Main controller logic (GameEngine, CommandParser)
+- ├── UI/ # (Reserved for future CLI improvements)
+- └── main.swift # Entry point
+
 
 
 ---
@@ -53,10 +54,10 @@ DragonDungeon/
 - **Language**: Swift 5  
 - **Platform**: macOS Terminal  
 - **Architecture**: MVC (Model–View–Controller)  
-  - `Model`: Player, Room, Items, etc.  
+  - `Model`: Player, Room, Items  
   - `View`: Console output  
   - `Controller`: GameEngine  
-- **Dependencies**: Zero external libraries  
+- **Dependencies**: None
 
 ---
 
@@ -71,4 +72,4 @@ DragonDungeon/
 
 ## 👨‍💻 Author
 
-Made with ❤️ by [@kanaevbaytik]
+Made with ❤️ by [@kanaevbaytik](https://github.com/kanaevbaytik)
